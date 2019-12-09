@@ -1,18 +1,18 @@
 const express = require('express');
 const app = express();
-const server = require('http').Server(app);
 
 var http = require('http');
 
-var s = http.createServer(function(request, response) {
-    response.writeHead(200);
-    response.write("Hello World");
-    response.end();
+var server = app.listen(process.env.PORT || 8093, function () {
+    var port = server.address().port;
+    console.log("App now running on port", port);
 });
 
-s.listen(process.env.PORT);
-
-console.log("Listening on http://127.0.0.1:8092/");
+app.get("/", function(req, res) {
+    console.log("contacts");
+    res.sendStatus(200);
+    res.end();
+});
 
 
 module.exports = server;
