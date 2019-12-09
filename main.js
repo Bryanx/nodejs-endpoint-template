@@ -10,7 +10,7 @@ var s = http.createServer(function(request, response) {
     response.end();
 });
 
-s.listen(8092);
+s.listen("/");
 
 console.log("Listening on http://127.0.0.1:8092/");
 
